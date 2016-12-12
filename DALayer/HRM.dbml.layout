@@ -1,0 +1,124 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 18.125" name="HRM">
+  <DataContextMoniker Name="/HRMDataContext" />
+  <nestedChildShapes>
+    <classShape Id="e05c760a-2dd8-4f74-bd2e-81b7acfc2b21" absoluteBounds="7.5, 2.75, 2, 1.3862939453124998">
+      <DataClassMoniker Name="/HRMDataContext/ctblCity" />
+      <nestedChildShapes>
+        <elementListCompartment Id="707c9e6f-80a6-47c7-90a5-2c7635c7d17e" absoluteBounds="7.5150000000000006, 3.21, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="f0498918-1958-4de0-a3c0-829b2efe0d04" absoluteBounds="2.875, 0.5, 2, 1.3862939453125005">
+      <DataClassMoniker Name="/HRMDataContext/mtblUserRole" />
+      <nestedChildShapes>
+        <elementListCompartment Id="0cd7be5b-e75d-4c2a-8855-dd25399ef097" absoluteBounds="2.8899999999999997, 0.96, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="5ca6b655-c9b3-4baa-8bc9-d61fe7fcaa7c" absoluteBounds="7.625, 4.5, 2, 1.193992513020834">
+      <DataClassMoniker Name="/HRMDataContext/ctblDisability" />
+      <nestedChildShapes>
+        <elementListCompartment Id="3b836bbc-acc3-499f-b5fb-52d467a65cd3" absoluteBounds="7.6400000000000006, 4.9600000000000009, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="96ea8fc7-7b49-4875-894b-2d25ecf86270" absoluteBounds="5.125, 2.75, 2, 1.3862939453124998">
+      <DataClassMoniker Name="/HRMDataContext/ctblDistrict" />
+      <nestedChildShapes>
+        <elementListCompartment Id="17616e5e-1886-42e9-bbc1-7238de7da1a2" absoluteBounds="5.14, 3.21, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="5e206df8-f302-4f07-9f9a-017e63748777" absoluteBounds="7.5, 0.5, 2, 1.7708968098958327">
+      <DataClassMoniker Name="/HRMDataContext/ctblLoginDetail" />
+      <nestedChildShapes>
+        <elementListCompartment Id="e52450a4-6b94-4922-991e-f31a7737a551" absoluteBounds="7.5150000000000006, 0.96, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="1cc78065-c0df-4dcc-b0b7-a3774ac2a291" absoluteBounds="2.875, 2.625, 2, 1.3862939453124998">
+      <DataClassMoniker Name="/HRMDataContext/ctblState" />
+      <nestedChildShapes>
+        <elementListCompartment Id="7e0b343d-5bf7-4057-861e-c124cd040325" absoluteBounds="2.8900000000000006, 3.085, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="3dbda823-c771-4c5b-95d3-2c0bd7570b59" absoluteBounds="0.5, 2.625, 2, 1.1939925130208335">
+      <DataClassMoniker Name="/HRMDataContext/mtblCountry" />
+      <nestedChildShapes>
+        <elementListCompartment Id="99005e7f-f8a7-4e41-be5c-8278db8b0a55" absoluteBounds="0.515, 3.085, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="cfe045be-8286-45c4-9500-f018df1d8616" absoluteBounds="5.125, 0.5, 2, 1.7708968098958327">
+      <DataClassMoniker Name="/HRMDataContext/mtblUser" />
+      <nestedChildShapes>
+        <elementListCompartment Id="f3a54c1f-6e72-4b9b-a551-1b59bf4a877e" absoluteBounds="5.1400000000000006, 0.96, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(7.125 : 3.44314697265625); (7.5 : 3.44314697265625)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/HRMDataContext/ctblDistrict/ctblDistrict_ctblCity" />
+      <nodes>
+        <classShapeMoniker Id="96ea8fc7-7b49-4875-894b-2d25ecf86270" />
+        <classShapeMoniker Id="e05c760a-2dd8-4f74-bd2e-81b7acfc2b21" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(4.875 : 3.38064697265625); (5.125 : 3.38064697265625)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/HRMDataContext/ctblState/ctblState_ctblDistrict" />
+      <nodes>
+        <classShapeMoniker Id="1cc78065-c0df-4dcc-b0b7-a3774ac2a291" />
+        <classShapeMoniker Id="96ea8fc7-7b49-4875-894b-2d25ecf86270" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.5 : 3.22199625651042); (2.875 : 3.22199625651042)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/HRMDataContext/mtblCountry/mtblCountry_ctblState" />
+      <nodes>
+        <classShapeMoniker Id="3dbda823-c771-4c5b-95d3-2c0bd7570b59" />
+        <classShapeMoniker Id="1cc78065-c0df-4dcc-b0b7-a3774ac2a291" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="e29a070c-050b-44d9-8e66-35b6b7a6b0fb" absoluteBounds="0.5, 0.5, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/HRMDataContext/mtblAccYear" />
+      <nestedChildShapes>
+        <elementListCompartment Id="11781a0f-6da0-4734-9c55-622dc66a5e83" absoluteBounds="0.51500000000000057, 0.96, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="bc28020b-ff28-4d52-b977-efc310175495" absoluteBounds="0.5, 4.5, 2, 1.1939925130208327">
+      <DataClassMoniker Name="/HRMDataContext/mtblCategory" />
+      <nestedChildShapes>
+        <elementListCompartment Id="5dbea61e-7282-4b48-a407-03ea3db5ee15" absoluteBounds="0.51500000000000057, 4.9600000000000009, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="b65f7123-fce6-4458-8bec-664f19ecf6ae" absoluteBounds="2.875, 4.5, 2, 1.1939925130208344">
+      <DataClassMoniker Name="/HRMDataContext/mtblDepartment" />
+      <nestedChildShapes>
+        <elementListCompartment Id="e76d1c8a-9a5c-409f-84be-75bd1cd01d14" absoluteBounds="2.8900000000000006, 4.96, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="2c57e87f-703e-4e3c-8628-cbc6abc23b48" absoluteBounds="5.25, 4.5, 2, 1.1939925130208344">
+      <DataClassMoniker Name="/HRMDataContext/mtblDesignation" />
+      <nestedChildShapes>
+        <elementListCompartment Id="899995d8-2b9d-40da-a39b-4258decc9301" absoluteBounds="5.2650000000000006, 4.9600000000000009, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="0aa6e2db-b251-4327-af08-5922d93c2f4d" absoluteBounds="2.875, 6.125, 2, 1.3862939453125">
+      <DataClassMoniker Name="/HRMDataContext/ctblCompEsiDetail" />
+      <nestedChildShapes>
+        <elementListCompartment Id="5579a0c0-8bd2-4765-996c-d0f98d9b7a71" absoluteBounds="2.8899999999999997, 6.585, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="9882b077-ccce-4896-aa5d-2591cfff3f80" absoluteBounds="0.5, 6.125, 2, 5.2323225911458326">
+      <DataClassMoniker Name="/HRMDataContext/mtblCompany" />
+      <nestedChildShapes>
+        <elementListCompartment Id="f8b7cdc9-a6f3-4fe7-9eb4-65233d8d1237" absoluteBounds="0.51500000000000012, 6.5850000000000009, 1.9700000000000002, 4.672322591145833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(2.5 : 6.81814697265625); (2.875 : 6.81814697265625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/HRMDataContext/mtblCompany/mtblCompany_ctblCompEsiDetail" />
+      <nodes>
+        <classShapeMoniker Id="9882b077-ccce-4896-aa5d-2591cfff3f80" />
+        <classShapeMoniker Id="0aa6e2db-b251-4327-af08-5922d93c2f4d" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="a9154820-4f50-4134-a311-f63e1cbec852" absoluteBounds="5.625, 6.125, 2, 11.7705712890625">
+      <DataClassMoniker Name="/HRMDataContext/mtblEmployee" />
+      <nestedChildShapes>
+        <elementListCompartment Id="5a1be148-937c-4c62-9db3-833f9e181452" absoluteBounds="5.64, 6.585, 1.9700000000000002, 11.2105712890625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

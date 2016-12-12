@@ -1,0 +1,5 @@
+D:\Projects\HRM_WEB\EntityLayer\bin\Debug\EntityLayer.dll
+D:\Projects\HRM_WEB\EntityLayer\bin\Debug\EntityLayer.pdb
+D:\Projects\HRM_WEB\EntityLayer\obj\Debug\Entity.csprojResolveAssemblyReference.cache
+D:\Projects\HRM_WEB\EntityLayer\obj\Debug\EntityLayer.dll
+D:\Projects\HRM_WEB\EntityLayer\obj\Debug\EntityLayer.pdb

@@ -1,0 +1,7 @@
+D:\Projects\HRM_WEB\DALayer\bin\Debug\DALayer.dll
+D:\Projects\HRM_WEB\DALayer\bin\Debug\DALayer.pdb
+D:\Projects\HRM_WEB\DALayer\obj\Debug\DALayer.dll
+D:\Projects\HRM_WEB\DALayer\obj\Debug\DALayer.pdb
+D:\Projects\HRM_WEB\DALayer\obj\Debug\DALayer.csprojResolveAssemblyReference.cache
+D:\Projects\HRM_WEB\DALayer\bin\Debug\EntityLayer.dll
+D:\Projects\HRM_WEB\DALayer\bin\Debug\EntityLayer.pdb

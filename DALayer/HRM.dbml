@@ -1,0 +1,196 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="hrm" Class="HRMDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=Balan;Initial Catalog=hrm;Persist Security Info=True;User ID=sa" SettingsObjectName="DALayer.Properties.Settings" SettingsPropertyName="hrmConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.ctblCity" Member="ctblCities">
+    <Type Name="ctblCity">
+      <Column Name="intCityId" Type="System.Decimal" DbType="Decimal(6,0) NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="intDistrictId" Type="System.Decimal" DbType="Decimal(6,0) NOT NULL" CanBeNull="false" />
+      <Column Name="varCity" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Association Name="ctblDistrict_ctblCity" Member="ctblDistrict" ThisKey="intDistrictId" OtherKey="intDistrictId" Type="ctblDistrict" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.mtblUserRole" Member="mtblUserRoles">
+    <Type Name="mtblUserRole">
+      <Column Name="intUserRoleId" Type="System.Decimal" DbType="Decimal(6,0) NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="varUserRole" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="varMasterFile" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ctblDisability" Member="ctblDisabilities">
+    <Type Name="ctblDisability">
+      <Column Name="intDisability" Type="System.Decimal" DbType="Decimal(6,0) NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="varDisablrType" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ctblDistrict" Member="ctblDistricts">
+    <Type Name="ctblDistrict">
+      <Column Name="intDistrictId" Type="System.Decimal" DbType="Decimal(6,0) NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="intStateId" Type="System.Decimal" DbType="Decimal(6,0) NOT NULL" CanBeNull="false" />
+      <Column Name="varDistrict" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Association Name="ctblDistrict_ctblCity" Member="ctblCities" ThisKey="intDistrictId" OtherKey="intDistrictId" Type="ctblCity" />
+      <Association Name="ctblState_ctblDistrict" Member="ctblState" ThisKey="intStateId" OtherKey="intStateId" Type="ctblState" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ctblLoginDetail" Member="ctblLoginDetails">
+    <Type Name="ctblLoginDetail">
+      <Column Name="intLoginDetailsId" Type="System.Decimal" DbType="Decimal(6,0) NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="dtDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="varIPNo" Type="System.String" DbType="VarChar(17)" CanBeNull="true" />
+      <Column Name="intId" Type="System.Decimal" DbType="Decimal(6,0)" CanBeNull="true" />
+      <Column Name="varType" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ctblState" Member="ctblStates">
+    <Type Name="ctblState">
+      <Column Name="intStateId" Type="System.Decimal" DbType="Decimal(6,0) NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="intCountryId" Type="System.Decimal" DbType="Decimal(6,0) NOT NULL" CanBeNull="false" />
+      <Column Name="varStateName" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Association Name="ctblState_ctblDistrict" Member="ctblDistricts" ThisKey="intStateId" OtherKey="intStateId" Type="ctblDistrict" />
+      <Association Name="mtblCountry_ctblState" Member="mtblCountry" ThisKey="intCountryId" OtherKey="intCountryId" Type="mtblCountry" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.mtblCountry" Member="mtblCountries">
+    <Type Name="mtblCountry">
+      <Column Name="intCountryId" Type="System.Decimal" DbType="Decimal(6,0) NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="varCountryName" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Association Name="mtblCountry_ctblState" Member="ctblStates" ThisKey="intCountryId" OtherKey="intCountryId" Type="ctblState" />
+    </Type>
+  </Table>
+  <Table Name="dbo.mtblUser" Member="mtblUsers">
+    <Type Name="mtblUser">
+      <Column Name="intUserId" Type="System.Decimal" DbType="Decimal(6,0) NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="varUserName" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="varPwd" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="intUserRoleId" Type="System.Decimal" DbType="Decimal(6,0)" CanBeNull="true" />
+      <Column Name="dtDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.mtblAccYear" Member="mtblAccYears">
+    <Type Name="mtblAccYear">
+      <Column Name="intAccYear" Type="System.Decimal" DbType="Decimal(6,0) NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="varAccYear" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="dtBeginDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="dtEndDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.mtblCategory" Member="mtblCategories">
+    <Type Name="mtblCategory">
+      <Column Name="intCategoryId" Type="System.Decimal" DbType="Decimal(6,0) NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="varCategory" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.mtblDepartment" Member="mtblDepartments">
+    <Type Name="mtblDepartment">
+      <Column Name="intDepartmentId" Type="System.Decimal" DbType="Decimal(6,0) NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="varDepartment" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.mtblDesignation" Member="mtblDesignations">
+    <Type Name="mtblDesignation">
+      <Column Name="intDesignationId" Type="System.Decimal" DbType="Decimal(6,0) NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="varDesignation" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ctblCompEsiDetail" Member="ctblCompEsiDetails">
+    <Type Name="ctblCompEsiDetail">
+      <Column Name="intEsiDetailId" Type="System.Decimal" DbType="Decimal(6,0) NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="intCompanyId" Type="System.Decimal" DbType="Decimal(6,0) NOT NULL" CanBeNull="false" />
+      <Column Name="varCompanyESINo" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Association Name="mtblCompany_ctblCompEsiDetail" Member="mtblCompany" ThisKey="intCompanyId" OtherKey="intCompanyId" Type="mtblCompany" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.mtblCompany" Member="mtblCompanies">
+    <Type Name="mtblCompany">
+      <Column Name="intCompanyId" Type="System.Decimal" DbType="Decimal(6,0) NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="varCompTitle" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="varCompanyName" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="intCountryId" Type="System.Decimal" DbType="Decimal(6,0)" CanBeNull="true" />
+      <Column Name="intStateId" Type="System.Decimal" DbType="Decimal(6,0)" CanBeNull="true" />
+      <Column Name="intDistrictId" Type="System.Decimal" DbType="Decimal(6,0)" CanBeNull="true" />
+      <Column Name="varCity" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="varAdd" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="intPincode" Type="System.Decimal" DbType="Decimal(10,0)" CanBeNull="true" />
+      <Column Name="varMobile" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="varPhone" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="varEmail" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="varBankAccNo" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="varBankCode" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="varBankName" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="varBankCity" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="varPFNo" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="varESINo" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="intCompEsiPer" Type="System.Decimal" DbType="Decimal(20,0)" CanBeNull="true" />
+      <Column Name="intEmpEsiPer" Type="System.Decimal" DbType="Decimal(20,0)" CanBeNull="true" />
+      <Column Name="intPfLimit" Type="System.Decimal" DbType="Decimal(20,0)" CanBeNull="true" />
+      <Column Name="intEsiLimit" Type="System.Decimal" DbType="Decimal(20,0)" CanBeNull="true" />
+      <Column Name="intEsiDailyWage" Type="System.Decimal" DbType="Decimal(20,0)" CanBeNull="true" />
+      <Association Name="mtblCompany_ctblCompEsiDetail" Member="ctblCompEsiDetails" ThisKey="intCompanyId" OtherKey="intCompanyId" Type="ctblCompEsiDetail" />
+    </Type>
+  </Table>
+  <Table Name="dbo.mtblEmployee" Member="mtblEmployees">
+    <Type Name="mtblEmployee">
+      <Column Name="intEmpId" Type="System.Decimal" DbType="Decimal(6,0) NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="varEmpId" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="varPwd" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="intCompanyId" Type="System.Decimal" DbType="Decimal(6,0)" CanBeNull="true" />
+      <Column Name="varCompanyESINo" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="intEmpType" Type="System.Decimal" DbType="Decimal(6,0)" CanBeNull="true" />
+      <Column Name="varTitle" Type="System.String" DbType="VarChar(5)" CanBeNull="true" />
+      <Column Name="varInitial" Type="System.String" DbType="VarChar(5)" CanBeNull="true" />
+      <Column Name="varEmpName" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="varSex" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="varBloodGroup" Type="System.String" DbType="VarChar(5)" CanBeNull="true" />
+      <Column Name="varFHName" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="varGuardian" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="varEducation" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="varReligion" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="varCommunity" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="varMarital" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="varImage" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="varPdf" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="intCountryId" Type="System.Decimal" DbType="Decimal(6,0)" CanBeNull="true" />
+      <Column Name="intStateId" Type="System.Decimal" DbType="Decimal(6,0)" CanBeNull="true" />
+      <Column Name="intDistrictId" Type="System.Decimal" DbType="Decimal(6,0)" CanBeNull="true" />
+      <Column Name="varCity" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="varAdd" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="intPincode" Type="System.Decimal" DbType="Decimal(10,0)" CanBeNull="true" />
+      <Column Name="varMobile" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="varEmail" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="dtDOB" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="dtDOJ" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="varDisability" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="varPFNo" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="varESINo" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="varDispensaryName" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="varDispensaryCity" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="intCategoryId" Type="System.Decimal" DbType="Decimal(6,0)" CanBeNull="true" />
+      <Column Name="intDepartmentId" Type="System.Decimal" DbType="Decimal(6,0)" CanBeNull="true" />
+      <Column Name="intDesignationId" Type="System.Decimal" DbType="Decimal(6,0)" CanBeNull="true" />
+      <Column Name="varBankAccNo" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="varBankCode" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="varBankName" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="varBankCity" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="intSalaryMode" Type="System.Decimal" DbType="Decimal(6,0)" CanBeNull="true" />
+      <Column Name="intSalaryType" Type="System.Decimal" DbType="Decimal(6,0)" CanBeNull="true" />
+      <Column Name="intSalary" Type="System.Decimal" DbType="Decimal(20,0)" CanBeNull="true" />
+      <Column Name="intHra" Type="System.Decimal" DbType="Decimal(6,0)" CanBeNull="true" />
+      <Column Name="intDa" Type="System.Decimal" DbType="Decimal(6,0)" CanBeNull="true" />
+      <Column Name="intWa" Type="System.Decimal" DbType="Decimal(6,0)" CanBeNull="true" />
+      <Column Name="intTa" Type="System.Decimal" DbType="Decimal(6,0)" CanBeNull="true" />
+      <Column Name="intOa" Type="System.Decimal" DbType="Decimal(6,0)" CanBeNull="true" />
+      <Column Name="intOtPerHour" Type="System.Decimal" DbType="Decimal(6,0)" CanBeNull="true" />
+      <Column Name="intGrossPay" Type="System.Decimal" DbType="Decimal(10,0)" CanBeNull="true" />
+      <Column Name="dtResignDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="varResignReason" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="dtRejoinDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="intUserId" Type="System.Decimal" DbType="Decimal(6,0)" CanBeNull="true" />
+      <Column Name="dtDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="bitApprove" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Function Name="dbo.GetIdentity" Method="GetIdentity">
+    <Parameter Name="TableName" Parameter="tableName" Type="System.String" DbType="VarChar(50)" />
+    <ElementType Name="GetIdentityResult">
+      <Column Name="IdentValue" Type="System.Decimal" DbType="Decimal(38,0)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+</Database>
